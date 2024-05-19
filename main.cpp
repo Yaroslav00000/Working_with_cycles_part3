@@ -1,57 +1,85 @@
-#include <iostream>
+п»ї#include <iostream>
 
 using namespace std;
 
 int main() {
-	int size = 5;
-    for (int i = 1; i <= size; i++) {
-        for (int j = 0; j < i; j++) {
-            cout << "*";
-        }
-        cout << endl;
+	int size = 0;
+	int pattern = 0;
+	cout << "Enter the size of the pattern: ";
+	cin >> size;
+	cout << "Enter the pattern number(from 1 to 5): ";
+	cin >> pattern;
+    if (pattern == 1) {
+        for (int i = size; i >= 1; i--) {
+                    for (int j = 0; j < size - i; j++) {
+                        cout << " ";
+                    }
+                    for (int j = 0; j < i; j++) {
+                        cout << "*";
+                    }
+                    cout << endl;
+                }
     }
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j < 5; j++) {
-            cout << "*";
+    else if (pattern == 2) {
+		for (int i = 0; i < size; i++) {
+			for (int j = 0; j <= i; j++) {
+				cout << "*";
+			}
+			cout << endl;
+		}
+	}
+    else if (pattern == 3) {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (i + j < size && i <= j) {
+					cout << "*";
+				}
+                else
+                {
+					cout << " ";
+				}
+			}
+			cout << endl;
+		}
+	}
+    else if (pattern == 4) {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (i + j + 1 >= size && i >= j) {
+					cout << "*";
+				}
+                else
+                {
+					cout << " ";
+				}
+			}
+			cout << endl;
+		}
+	}
+    else if (pattern == 5) {
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                if (i + j + 1 >= size && i >= j) {
+					cout << "*";
+				}
+                else if (i + j < size && i <= j) {
+					cout << "*";
+				}
+                else
+                {
+					cout << " ";
+				}
+			}
+			cout << endl;
         }
-        cout << endl;
     }
 
-    // Вивести на екран трикутник зірочками
-    for (int i = 0; i < size; i++) {
-        for (int j = 0; j <= i; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-
-    // Вивести на екран ромб зірочками
-    for (int i = 0; i < size; i++) {
-        for (int j = 5 - i - 1; j >= 0; j--) {
-            cout << " ";
-        }
-        for (int j = 0; j <= i; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-    for (int i = 1; i <= size; i++) {
-        for (int j = 0; j < i; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
-
-    // Виведення пробілів зліва
-    for (int i = size - 1; i >= 1; i--) {
-        for (int j = 0; j < size - i; j++) {
-            cout << " ";
-        }
-        for (int j = 0; j < i; j++) {
-            cout << "*";
-        }
-        cout << endl;
-    }
 
     return 0;
 }
